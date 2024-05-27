@@ -27,12 +27,7 @@ COMPARACION: '<' | '>' | '==' | '!=' | '<=' | '>=';
 programa: (instruccion)+;
 
 instruccion: declaracion
-    | asignacion
-    | bucleWhile
-    | estructuraIf
-    | bucleFor
-    | retorno
-    | llamadaFuncion;
+    | asignacion;
 
 declaracion: tipo listaDeclaradores PUNTOCOMA;
 
@@ -43,3 +38,16 @@ listaDeclaradores: declarador (COMA declarador)*;
 declarador: ID (IGUAL expresion)?;
 
 asignacion: ID IGUAL expresion PUNTOCOMA;
+
+expresion: expresionUnaria (operadorBinario expresionUnaria)*;
+
+expresionUnaria: operadorUnario? termino;
+
+operadorBinario: MAS | MENOS | MULT | DIV | COMPARACION;
+
+operadorUnario: MENOS;
+
+termino: ID
+    | NUMERO
+    | llamadaFuncion
+    | PARENIZQ expresion PARENDER;
