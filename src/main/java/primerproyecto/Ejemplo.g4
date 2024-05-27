@@ -1,6 +1,5 @@
 grammar Ejemplo;
 
-// Definir tokens básicos
 INT: 'int';
 DOUBLE: 'double';
 IF: 'if';
@@ -21,13 +20,18 @@ MAS: '+';
 MENOS: '-';
 MULT: '*';
 DIV: '/';
-WS: [ \t\r\n]+ -> skip;
+WS: [ \t\r\n]+ -> skip; 
 COMPARACION: '<' | '>' | '==' | '!=' | '<=' | '>=';
 
 programa: (instruccion)+;
 
 instruccion: declaracion
-    | asignacion;
+    | asignacion
+    | bucleWhile
+    | estructuraIf
+    | bucleFor
+    | retorno
+    | llamadaFuncion;
 
 declaracion: tipo listaDeclaradores PUNTOCOMA;
 
@@ -51,3 +55,15 @@ termino: ID
     | NUMERO
     | llamadaFuncion
     | PARENIZQ expresion PARENDER;
+
+bucleWhile: WHILE PARENIZQ expresion PARENDER LLAVEIZQ programa LLAVEDER;
+
+estructuraIf: IF PARENIZQ expresion PARENDER LLAVEIZQ programa LLAVEDER (ELSE LLAVEIZQ programa LLAVEDER)?;
+
+bucleFor: FOR PARENIZQ (declaracion | asignacion | ) expresion PUNTOCOMA expresion PARENDER LLAVEIZQ programa LLAVEDER;
+
+retorno: RETURN expresion PUNTOCOMA;
+
+llamadaFuncion: ID PARENIZQ listaArgumentos? PARENDER;
+
+listaArgumentos: expresion (COMA expresion)*;

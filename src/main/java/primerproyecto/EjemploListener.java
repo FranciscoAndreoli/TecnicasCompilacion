@@ -1,5 +1,6 @@
-// Generated from /home/fandreoli/Desktop/primerproyecto/src/main/java/primerproyecto/Ejemplo.g4 by ANTLR 4.13.1
+// Generated from /home/fandreoli/Desktop/proyectoTC/TecnicasCompilacion/src/main/java/primerproyecto/Ejemplo.g4 by ANTLR 4.13.1
 package primerproyecto;
+
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
