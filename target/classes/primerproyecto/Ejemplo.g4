@@ -20,7 +20,7 @@ MAS: '+';
 MENOS: '-';
 MULT: '*';
 DIV: '/';
-WS: [ \t\r\n]+ -> skip; 
+WS: [ \t\r\n]+ -> skip;
 COMPARACION: '<' | '>' | '==' | '!=' | '<=' | '>=';
 
 programa: (instruccion)+;
@@ -31,7 +31,8 @@ instruccion: declaracion
     | estructuraIf
     | bucleFor
     | retorno
-    | llamadaFuncion;
+    | llamadaFuncion
+    | declaracionFuncion;
 
 declaracion: tipo listaDeclaradores PUNTOCOMA;
 
@@ -60,10 +61,24 @@ bucleWhile: WHILE PARENIZQ expresion PARENDER LLAVEIZQ programa LLAVEDER;
 
 estructuraIf: IF PARENIZQ expresion PARENDER LLAVEIZQ programa LLAVEDER (ELSE LLAVEIZQ programa LLAVEDER)?;
 
-bucleFor: FOR PARENIZQ (declaracion | asignacion | ) expresion PUNTOCOMA expresion PARENDER LLAVEIZQ programa LLAVEDER;
+bucleFor: FOR PARENIZQ forInit PUNTOCOMA expresion? PUNTOCOMA forUpdate? PARENDER LLAVEIZQ programa LLAVEDER;
+
+forInit: declaracionSinPuntoComa | asignacionSinPuntoComa | ;
+
+forUpdate: asignacionSinPuntoComa (COMA asignacionSinPuntoComa)*;
+
+asignacionSinPuntoComa: ID IGUAL expresion;
+
+declaracionSinPuntoComa: tipo listaDeclaradores;
 
 retorno: RETURN expresion PUNTOCOMA;
 
 llamadaFuncion: ID PARENIZQ listaArgumentos? PARENDER;
 
 listaArgumentos: expresion (COMA expresion)*;
+
+declaracionFuncion: tipo ID PARENIZQ listaParametros? PARENDER LLAVEIZQ programa LLAVEDER;
+
+listaParametros: parametro (COMA parametro)*;
+
+parametro: tipo ID;

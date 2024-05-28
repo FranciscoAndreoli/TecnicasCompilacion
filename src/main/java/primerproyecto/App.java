@@ -34,9 +34,9 @@ public class App
         EjemploParser parser = new EjemploParser(tokens);
         
         if (parser.getNumberOfSyntaxErrors() == 0) {
-            System.out.println("Parsing completed successfully!");
+            System.out.println("Parseo Completo!");
         } else {
-            System.out.println("Parsing completed with errors.");
+            System.out.println("Parseo con errores.");
         }
     }
 }

@@ -25,9 +25,9 @@
             "name": "Debug ANTLR4 grammar",
             "type": "antlr-debug",
             "request": "launch",
-            "grammar": "${file}",
-            "input": "TecnicasCompilacion/codigo.txt",
-            "startRule": "s",
+            "grammar": "src/main/java/primerproyecto/Ejemplo.g4",
+            "input": "input/codigo.txt",
+            "startRule": "programa",
             "printParseTree": true,
             "visualParseTree": true
         }

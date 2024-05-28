@@ -101,6 +101,30 @@ public interface EjemploVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitBucleFor(EjemploParser.BucleForContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link EjemploParser#forInit}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitForInit(EjemploParser.ForInitContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link EjemploParser#forUpdate}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitForUpdate(EjemploParser.ForUpdateContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link EjemploParser#asignacionSinPuntoComa}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAsignacionSinPuntoComa(EjemploParser.AsignacionSinPuntoComaContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link EjemploParser#declaracionSinPuntoComa}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitDeclaracionSinPuntoComa(EjemploParser.DeclaracionSinPuntoComaContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link EjemploParser#retorno}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -118,4 +142,22 @@ public interface EjemploVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitListaArgumentos(EjemploParser.ListaArgumentosContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link EjemploParser#declaracionFuncion}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitDeclaracionFuncion(EjemploParser.DeclaracionFuncionContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link EjemploParser#listaParametros}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitListaParametros(EjemploParser.ListaParametrosContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link EjemploParser#parametro}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitParametro(EjemploParser.ParametroContext ctx);
 }

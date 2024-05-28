@@ -1,6 +1,5 @@
 // Generated from /home/fandreoli/Desktop/proyectoTC/TecnicasCompilacion/src/main/java/primerproyecto/Ejemplo.g4 by ANTLR 4.13.1
 package primerproyecto;
-
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
@@ -159,6 +158,46 @@ public interface EjemploListener extends ParseTreeListener {
 	 */
 	void exitBucleFor(EjemploParser.BucleForContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link EjemploParser#forInit}.
+	 * @param ctx the parse tree
+	 */
+	void enterForInit(EjemploParser.ForInitContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link EjemploParser#forInit}.
+	 * @param ctx the parse tree
+	 */
+	void exitForInit(EjemploParser.ForInitContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link EjemploParser#forUpdate}.
+	 * @param ctx the parse tree
+	 */
+	void enterForUpdate(EjemploParser.ForUpdateContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link EjemploParser#forUpdate}.
+	 * @param ctx the parse tree
+	 */
+	void exitForUpdate(EjemploParser.ForUpdateContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link EjemploParser#asignacionSinPuntoComa}.
+	 * @param ctx the parse tree
+	 */
+	void enterAsignacionSinPuntoComa(EjemploParser.AsignacionSinPuntoComaContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link EjemploParser#asignacionSinPuntoComa}.
+	 * @param ctx the parse tree
+	 */
+	void exitAsignacionSinPuntoComa(EjemploParser.AsignacionSinPuntoComaContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link EjemploParser#declaracionSinPuntoComa}.
+	 * @param ctx the parse tree
+	 */
+	void enterDeclaracionSinPuntoComa(EjemploParser.DeclaracionSinPuntoComaContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link EjemploParser#declaracionSinPuntoComa}.
+	 * @param ctx the parse tree
+	 */
+	void exitDeclaracionSinPuntoComa(EjemploParser.DeclaracionSinPuntoComaContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link EjemploParser#retorno}.
 	 * @param ctx the parse tree
 	 */
@@ -188,4 +227,34 @@ public interface EjemploListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitListaArgumentos(EjemploParser.ListaArgumentosContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link EjemploParser#declaracionFuncion}.
+	 * @param ctx the parse tree
+	 */
+	void enterDeclaracionFuncion(EjemploParser.DeclaracionFuncionContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link EjemploParser#declaracionFuncion}.
+	 * @param ctx the parse tree
+	 */
+	void exitDeclaracionFuncion(EjemploParser.DeclaracionFuncionContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link EjemploParser#listaParametros}.
+	 * @param ctx the parse tree
+	 */
+	void enterListaParametros(EjemploParser.ListaParametrosContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link EjemploParser#listaParametros}.
+	 * @param ctx the parse tree
+	 */
+	void exitListaParametros(EjemploParser.ListaParametrosContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link EjemploParser#parametro}.
+	 * @param ctx the parse tree
+	 */
+	void enterParametro(EjemploParser.ParametroContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link EjemploParser#parametro}.
+	 * @param ctx the parse tree
+	 */
+	void exitParametro(EjemploParser.ParametroContext ctx);
 }
